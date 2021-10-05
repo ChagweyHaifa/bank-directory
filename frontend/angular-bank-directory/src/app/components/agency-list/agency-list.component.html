@@ -1,0 +1,99 @@
+<div id="agency_list">
+    <div id="container">
+        <div class="py-3">
+            <button class="au-btn-submit yellow_button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                (click)="getAddForm()">Add
+                Agency</button>
+        </div>
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item" *ngFor="let tempAgency of agencies">
+                <h2 class="accordion-header" attr.id="flush-heading{{tempAgency.id}}">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        attr.data-bs-target="#flush-collapse{{tempAgency.id}}" aria-expanded="false"
+                        attr.aria-controls="flush-collapse{{tempAgency.id}}">
+                        {{tempAgency.city}}
+                    </button>
+                </h2>
+                <div attr.id="flush-collapse{{tempAgency.id}}" class="accordion-collapse collapse"
+                    attr.aria-labelledby="flush-heading{{tempAgency.id}}" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <br>
+                        <strong>Address: </strong>{{tempAgency.address}}
+                        <br>
+                        <strong>Manager: </strong>{{tempAgency.manager}}<br>
+                        <strong>Phone number: </strong>{{tempAgency.phoneNumber}}<br>
+                        <strong>Fax: </strong>{{tempAgency.fax}} <br>
+                        <strong>Email: </strong>{{tempAgency.email}}
+
+                        <div id="dl_up_btn">
+                            <i class="fas fa-trash" (click)="deleteAgency(tempAgency.id)"></i>
+                            <i class="fas fa-edit" (click)="getUpdateForm(tempAgency)" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal"></i>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add Agency</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="addForm">
+                    <input type="hidden" formControlName="agencyId">
+                    <div class="mb-3">
+                        <select class="form-select" aria-label="Default select example" formControlName="stateId">
+                            <option *ngFor="let tempState of states" value="{{tempState.id}}">{{tempState.name}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">City</label>
+                        <input type="text" class="form-control" formControlName="city">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class=" form-label">Address</label>
+                        <input type="text" class="form-control" formControlName="address">
+                    </div>
+                    <div class="mb-3">
+                        <label class=" form-label">Manager</label>
+                        <input type="text" class="form-control" formControlName="manager">
+                    </div>
+                    <div class="mb-3">
+                        <label class=" form-label">Phone Number</label>
+                        <input type="text" class="form-control" formControlName="phoneNumber">
+                    </div>
+                    <div class="mb-3">
+                        <label class=" form-label">Fax</label>
+                        <input type="text" class="form-control" formControlName="fax">
+                    </div>
+                    <div class="mb-3">
+                        <label class=" form-label">Email</label>
+                        <input type="email" class="form-control" aria-describedby="emailHelp" formControlName="email">
+                    </div>
+
+
+
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" *ngIf="isAdd" (click)="addAgency()">Add</button>
+                <button type="button" class="btn btn-primary" *ngIf="isUpdate" (click)="updateAgency()">Update</button>
+
+            </div>
+        </div>
+    </div>
+</div>

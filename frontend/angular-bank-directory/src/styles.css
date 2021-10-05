@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Abel&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background-color: #f9f9ff;
+  font-family: "Abel", sans-serif;
+  /* height: 3000px; */
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+#container {
+  width: 85%;
+  margin: auto;
+}
+
+.au-btn-submit {
+  min-width: 110px;
+  color: #fff;
+  border-radius: 43px;
+  font-weight: bold;
+  padding: 0.7rem 0;
+  box-shadow: rgb(0 0 0 / 45%) 0px 0px 12px 0px;
+  border: none;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.blue_button {
+  background: #0659b2;
+  color: #fff;
+  /* float: right; */
+  /* margin-top: 1rem; */
+}
+.blue_button:hover {
+  background: #0f88c5;
+}
+
+.yellow_button {
+  background-color: #fddd01;
+  color: #000;
+}
+.yellow_button:hover {
+  background-color: #cab101;
+}
+.white_button {
+  background-color: #fff;
+  color: #0659b2;
+}
+
+header {
+  background-color: #0659b2;
+  padding: 0.5rem;
+  /* height: 200px; */
+}
+header #container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /*  */
+}
+#userName {
+  color: #fff;
+  margin-right: 1rem;
+  font-size: 1.2rem;
+}
+#login_status {
+  /* width: 500px; */
+  display: flex;
+  align-items: center;
+}
+#registerLink {
+  width: 100%;
+}

@@ -1,0 +1,24 @@
+<header>
+    <div id="container">
+        <div id="logo">
+            <img src="assets/img/logo.png" alt="">
+        </div>
+
+
+
+        <i class="fas fa-user-circle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"></i>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li *ngIf="getUserName" id="user">
+                {{getUserName}}
+            </li>
+            <li *ngIf="getUserName" (click)="logout()" class="connection">Logout</li>
+            <li *ngIf="!getUserName" (click)="login()" class="connection">Login with Okta</li>
+            <li class="connection" *ngIf="!getUserName"><a id="registerLink"
+                    href="https://dev-66159503.okta.com/signin/register">Register</a></li>
+        </ul>
+    </div>
+</header>
+<app-search [getUserName]="getUserName"></app-search>
+
+<!-- <app-search></app-search> -->
+<!-- <router-outlet></router-outlet> -->
