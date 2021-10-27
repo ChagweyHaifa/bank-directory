@@ -12,7 +12,7 @@ import { FormBuilder } from '@angular/forms';
 export class SearchComponent implements OnInit {
 
   states: State[] = [];
-  currentStateName:string = "ariana";
+  currentStateName!: string;
 
   agency: Agency = new Agency();
   isAdd!:boolean;
@@ -41,6 +41,7 @@ export class SearchComponent implements OnInit {
       data => {
         this.agencies = data;
       })
+      this.currentStateName = "Ariana"
 
 
   }
@@ -61,6 +62,7 @@ export class SearchComponent implements OnInit {
         this.agencies = data;
       }
     )
+    
    }
 
    onChange($event:any){
@@ -140,12 +142,12 @@ export class SearchComponent implements OnInit {
           let ref = document.getElementById('cancel');
           ref?.click();
           // this.addForm.reset();
-          this.listAgency(this.agency.stateId );
+          this.listAgency(this.agency.stateId);
           // this.router.navigateByUrl(`${this.agency.stateId}`);
   
         },
-        error =>{
-          alert("Something wen wrong");
+        error => {
+          alert("Something went wrong");
           console.error('Error!',error)
         }
       )

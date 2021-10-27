@@ -9,8 +9,7 @@ import { AgencyService } from './services/agency.service';
 
 import { AppComponent } from './app.component';
 import { SearchComponent } from './components/search/search.component';
-// import { AgencyListComponent } from './components/agency-list/agency-list.component';
-import { AddAgencyComponent } from './components/add-agency/add-agency.component';
+
 
 
 
@@ -28,8 +27,7 @@ import { AddAgencyComponent } from './components/add-agency/add-agency.component
   declarations: [
     AppComponent,
     SearchComponent,
-    // AgencyListComponent,
-    AddAgencyComponent
+  
   ],
   imports: [
     // RouterModule.forRoot(routes),

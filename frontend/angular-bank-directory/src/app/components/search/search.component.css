@@ -1,4 +1,4 @@
-#mainSelect {
+.main-select {
   width: 300px;
   border-radius: 20px;
   padding: 0.5rem 1rem;
@@ -35,6 +35,15 @@ form {
 .accordion-button {
   text-transform: uppercase;
 }
-/* #stateName {
-  text-transform: uppercase;
-} */
+#selectBar {
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+}
+#service-select {
+  width: 170px;
+}
+.fa-plus {
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}

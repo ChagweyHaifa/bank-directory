@@ -1,16 +1,35 @@
 <div id="searchBar" class="py-3">
     <div id="container">
         <div id="flex_container">
-            <select class="form-select" id="mainSelect" aria-label="Default select example" (change)="onChange($event)">
 
-                <option *ngFor="let tempState of states" value="{{tempState.id}}">{{tempState.name}}
-                </option>
-            </select>
 
-            <div *ngIf="getUserName == 'haifa.chagwey@isticbc.org' ">
-                <button class="au-btn-submit yellow_button" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                    (click)="getAddForm()">Add Agency</button>
+            <div id="selectBar">
+                <select class="form-select main-select " id="service-select" aria-label="Default select example">
+
+                    <option value="agence">Agences</option>
+                    <option value="agence">GAB</option>
+                    <option value="agence">Bureaux de change</option>
+                </select>
+                <select class="form-select main-select" aria-label="Default select example" (change)="onChange($event)">
+
+                    <option *ngFor="let tempState of states" value="{{tempState.id}}">{{tempState.name}}
+                    </option>
+                </select>
+
+                <button class="au-btn-submit yellow_button">Search</button>
             </div>
+
+
+            <i *ngIf="getUserName == 'haifa.chagwey@isticbc.org' " class="fas fa-plus-circle" id="dropdownMenuButton2"
+                data-bs-toggle="dropdown" aria-expanded="false"></i>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+
+                <li data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="getAddForm()">Agence</li>
+                <li>GAB</li>
+                <li>Bureau de change</li>
+            </ul>
+
+
 
         </div>
     </div>
@@ -18,6 +37,8 @@
 
 <div id="agencyList" class="py-5">
     <div id="container">
+        <h1 class="my-4">Agences</h1>
+
 
         <h2>{{currentStateName}}</h2>
 
